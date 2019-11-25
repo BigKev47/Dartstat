@@ -1,0 +1,27 @@
+scalar Date
+
+type Team {
+  _id: ID!
+  name: String!
+  events: [Event]
+}
+
+type Event {
+  _id: ID!
+  date: Date
+}
+
+input TeamInput {
+  _id: ID
+  name: String!
+}
+
+type Mutation {
+  addTeam(team: TeamInput): Team
+  addEvent(teamId: ID, date: Date): Team
+  removeEvent(teamId: ID, eventId: ID): Team
+}
+
+type Query {
+  teams: [Team]
+}

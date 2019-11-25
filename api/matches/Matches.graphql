@@ -1,0 +1,25 @@
+type Match {
+  _id: ID!
+  name: String!
+  events: [Event]
+}
+
+type Event {
+  _id: ID!
+  date: Date
+}
+
+input MatchInput {
+  _id: ID
+  teams: [Team!]!
+}
+
+type Mutation {
+  addMatch(match: MatchInput): Match
+  addTeam(matchId: ID, team: Team): Match
+  removeEvent(matchId: ID, eventId: ID): Match
+}
+
+type Query {
+  matches: [Match]
+}

@@ -1,0 +1,5 @@
+{
+  "operationName": "getHabits",
+  "variables": {},
+  "query": "query getHabits {\n  habits {\n    _id\n    name\n    events {\n      _id\n      date\n      __typename\n    }\n    __typename\n  }\n}\n"
+}

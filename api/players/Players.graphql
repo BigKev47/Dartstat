@@ -1,0 +1,33 @@
+type Player {
+  _id: ID!
+  # user: User
+  firstName: String!
+  lastName: String
+  nickname: String!
+  email: String
+  updatedAt: Date
+  createdAt: Date
+  # games: [Game!]! 
+  # matches: [Match!]!
+  # teams: [Team!]!
+  # teamsCaptained: [Team!]!
+  # gamesWon: [Game!]!
+  # matchesWon: [Match!]!
+}
+
+input PlayerInput {
+  _id: ID
+  firstName: String!
+  lastName: String
+  nickname: String!
+  email: String
+  # teamsCaptained: [Team!]!
+}
+
+type Mutation {
+  addPlayer(player: PlayerInput): Player
+}
+
+type Query {
+  players: [Player]
+}

@@ -1,0 +1,19 @@
+type Game {
+  _id: ID!
+  date: Date
+}
+
+input GameInput {
+  _id: ID
+  name: String!
+}
+
+type Mutation {
+  addGame(game: GameInput): Game
+  addEvent(gameId: ID, date: Date): Game
+  removeEvent(gameId: ID, eventId: ID): Game
+}
+
+type Query {
+  games: [Game]
+}
